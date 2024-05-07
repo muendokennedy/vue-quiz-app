@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const {quizQuestionLength, numberofCorrectAswers} = defineProps([
   'quizQuestionLength', 'numberofCorrectAswers'
@@ -10,6 +11,7 @@ const {quizQuestionLength, numberofCorrectAswers} = defineProps([
   <div class="results">
     <p>Your Results...</p>
     <h1>{{ numberofCorrectAswers }} / {{ quizQuestionLength }}</h1>
+    <RouterLink to="/" class="back-btn">Go Back</RouterLink>
   </div>
 </template>
 
@@ -23,5 +25,13 @@ p{
 }
 h1{
   font-size: 80px;
+}
+.back-btn{
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 12px;
+  background: bisque;
+  color: black;
+  border-radius: 6px;
 }
 </style>
